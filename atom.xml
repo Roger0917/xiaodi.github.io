@@ -5,9 +5,9 @@
   <subtitle>不忘初心 方得始终</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.projay.xyz/"/>
+  <link href="http://blog.projay.com/"/>
   <updated>2017-12-21T14:31:37.315Z</updated>
-  <id>http://blog.projay.xyz/</id>
+  <id>http://blog.projay.com/</id>
   
   <author>
     <name>Jay</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.projay.xyz/2017/12/21/hello-world/"/>
-    <id>http://blog.projay.xyz/2017/12/21/hello-world/</id>
+    <link href="http://blog.projay.com/2017/12/21/hello-world/"/>
+    <id>http://blog.projay.com/2017/12/21/hello-world/</id>
     <published>2017-12-21T14:31:37.315Z</published>
     <updated>2017-12-21T14:31:37.315Z</updated>
     
