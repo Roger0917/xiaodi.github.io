@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.projay.com/about/index.html</loc>
+    
+    <lastmod>2017-12-22T14:16:36.859Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.projay.com/categories/index.html</loc>
     
     <lastmod>2017-12-22T08:40:27.587Z</lastmod>
