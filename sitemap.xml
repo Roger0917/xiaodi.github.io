@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.projay.com/2017/12/24/%E9%98%BF%E9%87%8C%E4%BA%91Centos7%E4%B8%8BNginx%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2017-12-24T15:28:10.958Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.projay.com/about/index.html</loc>
     
     <lastmod>2017-12-23T11:22:55.367Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://blog.projay.com/tags/index.html</loc>
     
     <lastmod>2017-12-22T20:42:11.859Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.projay.com/2017/12/21/hello-world/</loc>
-    
-    <lastmod>2017-12-21T14:31:37.315Z</lastmod>
     
   </url>
   

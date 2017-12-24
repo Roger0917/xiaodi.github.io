@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="centos,nginx" />
 
 
 
@@ -89,16 +89,20 @@
 
 
 
-<meta name="description" content="不忘初心,方得始终">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jay&#39;s Blog">
-<meta property="og:url" content="http://blog.projay.com/index.html">
+<meta name="description" content="安装Nginx相关环境为了保证正常安装Nginx和安装后Nginx的正常使用，在安装前，需要安装如下软件  GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，我们下载的Nginx不是可以直接在Linux中可以运行的二进制程序（虽然1.2.x版本已经在某些操作系统上提供相应的二进制包了，但是这里学习最广泛使用的方式，将源码编译成二进制程序进行使用）通">
+<meta name="keywords" content="centos,nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云Centos7下Nginx的安装和配置">
+<meta property="og:url" content="http://blog.projay.com/2017/12/24/阿里云Centos7下Nginx的搭建与配置/index.html">
 <meta property="og:site_name" content="Jay&#39;s Blog">
-<meta property="og:description" content="不忘初心,方得始终">
+<meta property="og:description" content="安装Nginx相关环境为了保证正常安装Nginx和安装后Nginx的正常使用，在安装前，需要安装如下软件  GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，我们下载的Nginx不是可以直接在Linux中可以运行的二进制程序（虽然1.2.x版本已经在某些操作系统上提供相应的二进制包了，但是这里学习最广泛使用的方式，将源码编译成二进制程序进行使用）通">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2993907-27b8cf62d6b5a531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-24T15:28:10.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jay&#39;s Blog">
-<meta name="twitter:description" content="不忘初心,方得始终">
+<meta name="twitter:title" content="阿里云Centos7下Nginx的安装和配置">
+<meta name="twitter:description" content="安装Nginx相关环境为了保证正常安装Nginx和安装后Nginx的正常使用，在安装前，需要安装如下软件  GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，我们下载的Nginx不是可以直接在Linux中可以运行的二进制程序（虽然1.2.x版本已经在某些操作系统上提供相应的二进制包了，但是这里学习最广泛使用的方式，将源码编译成二进制程序进行使用）通">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2993907-27b8cf62d6b5a531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.projay.com/"/>
+  <link rel="canonical" href="http://blog.projay.com/2017/12/24/阿里云Centos7下Nginx的搭建与配置/"/>
 
 
 
 
 
-  <title>Jay's Blog</title>
+  <title>阿里云Centos7下Nginx的安装和配置 | Jay's Blog</title>
   
 
 
@@ -153,8 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
 <a href="https://github.com/Roger0917" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -292,9 +295,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -324,9 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/24/阿里云Centos7下Nginx的搭建与配置/" itemprop="url">阿里云Centos7下Nginx的安装和配置</a></h1>
+          <h1 class="post-title" itemprop="name headline">阿里云Centos7下Nginx的安装和配置</h1>
         
 
         <div class="post-meta">
@@ -391,6 +392,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
           
 
@@ -409,23 +415,99 @@
       
 
       
-        
-          
-           安装Nginx相关环境为了保证正常安装Nginx和安装后Nginx的正常使用，在安装前，需要安装如下软件
+        <script src="/assets/js/APlayer.min.js"> </script><h4 id="安装Nginx相关环境"><a href="#安装Nginx相关环境" class="headerlink" title="安装Nginx相关环境"></a>安装Nginx相关环境</h4><p>为了保证正常安装Nginx和安装后Nginx的正常使用，在安装前，需要安装如下软件</p>
+<ol>
+<li><p>GCC编译器<br>GCC（GNU Compiler Collection）可用于编译C/C++语言程序，我们下载的Nginx不是可以直接在Linux中可以运行的二进制程序（虽然1.2.x版本已经在某些操作系统上提供相应的二进制包了，但是这里学习最广泛使用的方式，将源码编译成二进制程序进行使用）<br>通过下面两句命令来安装GCC编译器</p>
+<blockquote>
+<p><code>yum install -y gcc</code><br><code>yum install -y gcc-c++</code></p>
+</blockquote>
+</li>
+<li><p>PCRE库<br>PCRE（Perl Compatible Regular Expressions，Perl兼容正则表达式）是由Philip Hazel开发的函数库，这个库支持正则表达式。如果我们在配置文件nginx.conf中使用了正则表达式，就必须装上PCRE库，因为Nginx的HTTP模块需要靠PCRE库来解析正则表达式，如果你认定自己不会使用正则表达式，那么可以不装，这里建议装上，以防以后需要使用到正则表达式<br>命令如下</p>
+<blockquote>
+<p><code>yum install -y pcre pcre-devel</code><br>pcre-devel是使用PCRE做二次开发时所需要的开发库，包括头文件等，这也是编译Nginx所必须使用的。</p>
+</blockquote>
+</li>
+<li><p>zlib库<br>zlib库用于对HTTP包的内容做gzip格式的压缩，来减少网络流量传送，当我们在nginx.conf中配置了gzip on，并指定了某些类型（content-type）的HTTP响应使用gzip来进行压缩以减少网络传输量，就必须在编译时将zlib库编译进Nginx<br>命令如下</p>
+<blockquote>
+<p><code>yum install -y zlib zlib-devel</code><br>zlib是直接使用的库，zlib-devel是二次开发所需要的库。</p>
+</blockquote>
+</li>
+<li><p>OpenSSL开发库<br>如果想让Nginx在SSL协议上传送HTTP，也就是所谓的HTTPS，就需要装上OpenSSL，此外，如果我们还想使用MD5、SHA1等散列函数，那也必须安装上这个开发库<br>命令如下</p>
+<blockquote>
+<p><code>yum install -y openssl openssl-devel</code></p>
+</blockquote>
+</li>
+<li><p>注意<br>也可以一次性安装gcc,zlib,openssl环境</p>
+<blockquote>
+<p><code>yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</code></p>
+</blockquote>
+</li>
+</ol>
+<h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4><p>　下载nginx:</p>
+<blockquote>
+<p><code>wget http://nginx.org/download/nginx-1.6.2.tar.gz</code></p>
+</blockquote>
+<p>　解压安装包： </p>
+<blockquote>
+<p><code>tar zxvf nginx-1.6.2.tar.gz</code></p>
+</blockquote>
+<p>　进入安装包目录：cd</p>
+<blockquote>
+<p><code>nginx-1.6.2</code></p>
+</blockquote>
+<p>　编译安装：</p>
+<blockquote>
+<p><code>./configure,默认地址 /usr/local/nginx</code></p>
+</blockquote>
+<p>　安装：</p>
+<blockquote>
+<p><code>make &amp;&amp; make install</code></p>
+</blockquote>
+<p>  Nginx操作:</p>
+<blockquote>
+<p><code>cd /usr/local/nginx/sbin</code><br>启动nginx<br><code>./nginx</code><br>重新载入配置<br><code>./nginx -s reload</code><br>重新启动Nginx<br><code>./nginx -s reopen</code><br>停止Nginx<br><code>./nginx -s stop</code></p>
+</blockquote>
+<p>启动完Nginx后，你就可以通过主机IP来访问nginx了，出现下面这个界面表示Nginx就搞定了（我对默认界面进行了一些修改），如果不能访问，可以查询一下自己防火墙的配置，是否开放了Web服务所需要的端口，如果你的服务器上在腾讯云、阿里云或者某个云上的，可以看看自己为该服务器配置的安全策略是否允许Web服务所需要的端口可以接收和发送相应的数据</p>
+<p>可以看一下CentOS7中，配置防火墙的命令</p>
+<blockquote>
+<p>允许相应的端口<br><code>firewall-cmd --zone=public --add-port=80/tcp --permanent</code><br><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent</code><br><code>firewall-cmd --zone=public --add-port=9000/tcp --permanent</code><br>重新载入配置<br><code>firewall-cmd --reload</code></p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2993907-27b8cf62d6b5a531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="配置Nginx自启动"><a href="#配置Nginx自启动" class="headerlink" title="配置Nginx自启动"></a>配置Nginx自启动</h4><p>至此，安装完成！但是每次要进行到相应的路径来启动Nginx太麻烦了，这里可以在etc/init.d目录下创建一个启动脚本，通过这个脚本来启动Nginx，这样启动Nginx会方便很多</p>
+<blockquote>
+<p>在etc/init.d目录下创建nginx脚本<br><code>vim /etc/init.d/nginx</code></p>
+</blockquote>
+<p>然后将下面内容复制并保存到这个nginx脚本文件中</p>
+<blockquote>
+<p><code>#!/bin/sh</code><br><code>#</code><br><code># nginx - this script starts and stops the nginx daemin</code><br><code>#</code><br><code># chkconfig:  - 85 15</code><br><code># description:  Nginx is an HTTP(S) server, HTTP(S) reverse \</code><br><code>#              proxy and IMAP/POP3 proxy server</code><br><code># processname: nginx</code><br><code># config:      /usr/local/nginx/conf/nginx.conf</code><br><code># pidfile:    /usr/local/nginx/logs/nginx.pid</code><br><code># Source function library.</code><br><code>. /etc/rc.d/init.d/functions</code><br><code># Source networking configuration.</code><br><code>. /etc/sysconfig/network</code><br><code># Check that networking is up.</code><br><code>[ &quot;$NETWORKING&quot; = &quot;no&quot; ] &amp;&amp; exit 0</code><br><code>nginx=&quot;/usr/local/nginx/sbin/nginx&quot;</code><br><code>prog=$(basename $nginx)</code><br><code>NGINX_CONF_FILE=&quot;/usr/local/nginx/conf/nginx.conf&quot;</code><br><code>lockfile=/var/lock/subsys/nginx</code><br><code>start() {</code><br><code>[ -x $nginx ] || exit 5</code><br><code>[ -f $NGINX_CONF_FILE ] || exit 6</code><br><code>echo -n $&quot;Starting $prog: &quot;</code><br><code>daemon $nginx -c $NGINX_CONF_FILE</code><br><code>retval=$?</code><br><code>echo</code><br><code>[ $retval -eq 0 ] &amp;&amp; touch $lockfile</code><br><code>return $retval</code><br><code>}</code><br><code>stop() {</code><br><code>echo -n $&quot;Stopping $prog: &quot;</code><br><code>killproc $prog -QUIT</code><br><code>retval=$?</code><br><code>echo</code><br><code>[ $retval -eq 0 ] &amp;&amp; rm -f $lockfile</code><br><code>return $retval</code><br><code>}</code><br><code>restart() {</code><br><code>configtest || return $?</code><br><code>stop</code><br><code>start</code><br><code>}</code><br><code>reload() {</code><br><code>configtest || return $?</code><br><code>echo -n $&quot;Reloading $prog: &quot;</code><br><code>killproc $nginx -HUP</code><br><code>RETVAL=$?</code><br><code>echo</code><br><code>}</code><br><code>force_reload() {</code><br><code>restart</code><br><code>}</code><br><code>configtest() {</code><br><code>$nginx -t -c $NGINX_CONF_FILE</code><br><code>}</code><br><code>rh_status() {</code><br><code>status $prog</code><br><code>}</code><br><code>rh_status_q() {</code><br><code>rh_status &gt;/dev/null 2&gt;&amp;1</code><br><code>}</code><br><code>case &quot;$1&quot; in</code><br><code>start)</code><br><code>rh_status_q &amp;&amp; exit 0</code><br><code>$1</code><br><code>;;</code><br><code>stop</code><br><code>rh_status_q || exit 0</code><br><code>$1</code><br><code>;;</code><br><code>restart|configtest)</code><br><code>$1</code><br><code>;;</code><br><code>reload)</code><br><code>rh_status_q || exit 7</code><br><code>$1</code><br><code>;;</code><br><code>force-reload)</code><br><code>force_reload</code><br><code>;;</code><br><code>status)</code><br><code>rh_status</code><br><code>;;</code><br><code>condrestart|try-restart)</code><br><code>rh_status_q || exit 0</code><br><code>;;</code><br><code>*)</code><br><code>echo $&quot;Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest}&quot;</code><br><code>exit 2</code><br><code>esac</code></p>
+</blockquote>
+<p>接着为这个脚本添加执行权限</p>
+<blockquote>
+<p> <code>chmod +x /etc/init.d/nginx</code></p>
+</blockquote>
+<p>并将Nginx添加到系统自启动组中</p>
+<blockquote>
+<p><code>chkconfig --add /etc/init.d/nginx</code></p>
+</blockquote>
+<p>最后将开启自启动</p>
+<blockquote>
+<p><code>chkconfig nginx on</code></p>
+</blockquote>
+<p>经过上面的配置后，就可以通过下面的命令来操作nginx了</p>
+<blockquote>
+<p><code>service nginx reload</code>    重新加载配置<br><code>service nginx start</code> 启动Nginx</p>
+</blockquote>
 
-GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，我们下载的Nginx不是可以直接在Linux中可以运行的二进制程序（虽然1.2.x版本已经在
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/24/阿里云Centos7下Nginx的搭建与配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
   
 </div>
     
@@ -435,19 +517,54 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享,您的支持将鼓励我继续创作!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin4.png" alt="Jay 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao4.png" alt="Jay 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -457,10 +574,37 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -468,6 +612,20 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -490,8 +648,17 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -618,6 +785,22 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Nginx相关环境"><span class="nav-number">1.</span> <span class="nav-text">安装Nginx相关环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Nginx"><span class="nav-number">2.</span> <span class="nav-text">安装Nginx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Nginx自启动"><span class="nav-number">3.</span> <span class="nav-text">配置Nginx自启动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -778,6 +961,10 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -796,6 +983,18 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
     
 
     
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://blog.projay.com/2017/12/24/阿里云Centos7下Nginx的搭建与配置/';
+          this.page.identifier = '2017/12/24/阿里云Centos7下Nginx的搭建与配置/';
+          this.page.title = '阿里云Centos7下Nginx的安装和配置';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
 
@@ -811,6 +1010,10 @@ GCC编译器GCC（GNU Compiler Collection）可用于编译C/C++语言程序，�
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2135563"></script>
+      <!-- UY END -->
     
   
 
