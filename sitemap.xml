@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.projay.com/2018/01/11/Nginx-Tomcat-Redis%E5%AE%9E%E7%8E%B0%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
+    
+    <lastmod>2018-01-11T15:58:18.612Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.projay.com/about/index.html</loc>
     
     <lastmod>2017-12-24T16:00:19.857Z</lastmod>
